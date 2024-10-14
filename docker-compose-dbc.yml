@@ -1,0 +1,22 @@
+version: '3.8'
+
+networks:
+  default:
+    name: faucet
+services:
+  faucet:
+    build:
+      context: .
+      dockerfile: dbc.Dockerfile
+    container_name: faucet
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - faucet-data:/data
+    command:
+      - --datadir=/data
+      - --config=/config/dbc-faucet-config.yaml
+
+volumes:
+  faucet-data:
