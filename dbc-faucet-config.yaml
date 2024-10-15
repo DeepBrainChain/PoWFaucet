@@ -128,7 +128,7 @@ modules:
   
   ## ENS Name
   ensname:
-    enabled: true
+    enabled: false
 
     # RPC Host for ENS name resolver (mainnet)
     rpcHost: "https://rpc-testnet.dbcwallet.io/"
